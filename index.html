@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doação de Sangue</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>DOE</h1>
+        <h2>A sua doação importa</h2>
+        <p>Até 3 vidas com 1 doação</p>
+        <p>Mais de 38.000 doações</p>
+        <p>Apenas 1,9% da população doa sangue</p>
+        <button>Doe já!</button>
+    </header>
+
+    <section class="form hide">
+        <h2>Entre na Lista de Doadores</h2>
+        <form action="/" method="POST">
+            <input type="text" name="name" placeholder="Nome Completo">
+            <input type="text" name="email" placeholder="E-mail">
+            <input type="text" name="blood" placeholder="Tipo Sanguíneo">
+            <button>Quero Ajudar!</button>
+        </form>
+    </section>
+
+    <main>
+        <h2>Últimos <span>doadores</span></h2>
+        <section class="donors">
+
+            {% for donor in donors %}
+
+            <div class="donor">
+                <div class="blood">{{donor.blood}}</div>
+                <p>{{donor.name}}</p>
+                <button>Delete</button>
+            </div>
+
+            {%endfor%}
+
+        </section>
+    </main>
+    <footer>Com ❤ Nelson</footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
